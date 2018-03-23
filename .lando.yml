@@ -1,4 +1,4 @@
-name: cowork
+name: cw-scheduler
 recipe: drupal8
 config:
   webroot: web
