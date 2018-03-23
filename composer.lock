@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "81dc6f28fb2527d3a75a5ccc5fee16fe",
+    "content-hash": "b874dc7f6cb356db972b6074eb922552",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2105,6 +2105,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "Add scheduler_content_moderation_integration submodule": "https://www.drupal.org/files/issues/scheduler-content-moderation-integration-2798689-32.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
