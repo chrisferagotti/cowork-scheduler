@@ -5,12 +5,16 @@ config:
   php: 7.2
   xdebug: false
   conf:
-    php: php.ini
-    mysql: my.cnf
+    php: dev/php.ini
+    mysql: /dev/my.cnf
 services:
   database:
     type: mariadb
     portforward: 3350
+  pma:
+    type: phpmyadmin
+    hosts:
+      - database
   appserver:
     composer:
       phpunit/phpunit: '*'
