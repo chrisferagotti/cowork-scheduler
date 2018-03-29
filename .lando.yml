@@ -6,7 +6,7 @@ config:
   xdebug: false
   conf:
     php: dev/php.ini
-    mysql: /dev/my.cnf
+    mysql: dev/my.cnf
 services:
   database:
     type: mariadb
@@ -15,16 +15,21 @@ services:
     type: phpmyadmin
     hosts:
       - database
-  appserver:
-    composer:
-      phpunit/phpunit: '*'
-      behat/behat: 3.3.1
   node:
     type: node:6.10
     globals:
       gulp-cli: latest
     build:
-      - "cd $LANDO_MOUNT && npm install"
+      - cd $LANDO_MOUNT && npm install
+  appserver:
+    composer:
+      phpunit/phpunit: '*'
+      behat/behat: 3.3.1
+    build:
+      - |
+        if [ -n "$GITHUB_TOKEN" ] ; then
+          cd $LANDO_MOUNT && composer config --global --auth --unset github-oauth.github.com && composer config --global github-oauth.github.com $GITHUB_TOKEN
+        fi
 tooling:
   phpunit:
     service: appserver
