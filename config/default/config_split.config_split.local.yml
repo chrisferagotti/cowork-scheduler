@@ -1,0 +1,18 @@
+uuid: 55781ffd-57e4-424a-bb75-d9bfde79ccb7
+langcode: en
+status: true
+dependencies: {  }
+id: local
+label: local
+folder: ../config/local
+module:
+  devel: 0
+  devel_generate: 0
+  kint: 0
+theme: {  }
+blacklist: {  }
+graylist:
+  - dblog.settings
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0
